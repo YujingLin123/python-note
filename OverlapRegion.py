@@ -92,7 +92,7 @@ df = d0.append(df)
 25  chr03      400    600      234    452    0.260
 """
 ##group by similar background bin
-df0 = df.groupby(by=['chr','start_x','end_x'])['Overlap'].mean()
+df0 = df.groupby(by=['chr','start_x','end_x'])['Overlap'].mean().reset_index()
 
 """
 chr    start_x  end_x

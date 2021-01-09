@@ -92,18 +92,17 @@ df = d0.append(df)
 25  chr03      400    600      234    452    0.260
 """
 ##group by similar background bin
-df0 = df.groupby(by=['chr','start_x','end_x'])['Overlap'].mean().reset_index()
+df0 = df.groupby(by=['chr','start_x','end_x'])['Overlap'].sum().reset_index()
 
 """
-chr    start_x  end_x
-chr01  0        200      0.3750
-       200      400      0.4875
-       400      600      0.2500
-chr02  0        200      0.3750
-       200      400      0.1175
-       400      600      0.2850
-chr03  0        200      0.6000
-       200      400      0.8300
-       400      600      0.3800
-Name: Overlap, dtype: float64
+     chr  start_x  end_x  Overlap
+0  chr01        0    200    0.750
+1  chr01      200    400    0.975
+2  chr01      400    600    0.250
+3  chr02        0    200    0.750
+4  chr02      200    400    0.235
+5  chr02      400    600    0.285
+6  chr03        0    200    0.600
+7  chr03      200    400    0.830
+8  chr03      400    600    0.760
 """
